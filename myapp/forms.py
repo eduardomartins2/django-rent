@@ -1,6 +1,5 @@
-from doctest import register_optionflag
 from django import forms
-from .models import Client, Immobile
+from .models import Client, Immobile, RegisterLocation
 
 
 ## Cadastra Cliente          
@@ -53,7 +52,7 @@ class RegisterLocationForm(forms.ModelForm):
     dt_end = forms.DateTimeField(widget=forms.DateInput(format='%d-%m-%Y',attrs={'type': 'date',}))
 
     class Meta:
-        model = register_optionflag
+        model = RegisterLocation
         fields = '__all__'
         exclude = ('immobile','create_at',)
         
