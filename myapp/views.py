@@ -54,3 +54,9 @@ def form_location(request, id):
             return redirect('list-location') # Retorna para lista
     context = {'form': form, 'location': get_locate}
     return render(request, 'form-location.html', context)
+
+
+## Relatórios 
+def reports(request): ## Relatórios   
+    immobile = Immobile.objects.all()  
+    return render(request, 'reports.html', {'immobiles':immobile})
